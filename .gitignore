@@ -12,3 +12,6 @@
 *.out
 
 .idea
+test/
+test/cov/cov
+test/test2/test2

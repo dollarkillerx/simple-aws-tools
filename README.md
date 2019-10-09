@@ -32,6 +32,5 @@ go get github.com/dollarkillerx/simple-aws-tools
 		}
 		defer file.Close()
 		upload.UploadFile(file,item)
-
 	}
 ```

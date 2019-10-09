@@ -7,8 +7,11 @@
 package main
 
 import (
-	"os"
+	"fmt"
 	simple_aws_tools "github.com/dollarkillerx/simple-aws-tools"
+	"log"
+	"os"
+	"time"
 )
 
 func main() {
@@ -18,15 +21,24 @@ func main() {
 	upload := tools.InitUpload("pre-europe")
 
 	// 遍历目录
-	filelist := simple_aws_tools.GetFileList("test") // 返货目录下所有文件 的[]string
+	filelist := simple_aws_tools.GetFileList("img") // 返货目录下所有文件 的[]string
 	for _,item := range filelist {
 		file, e := os.Open(item)
 		if e != nil {
 			continue
 		}
 		defer file.Close()
-		upload.UploadFile(file,item)
-
+		ko:
+		e = upload.UploadFile(file, "fr-kok/"+item)
+		if e != nil {
+			log.Println(e)
+			time.Sleep(time.Second * 3)
+			goto ko
+		}else {
+			fmt.Println("上传完毕： "+item)
+		}
 	}
+	log.Println("上传完毕")
+
 }
 
