@@ -19,7 +19,7 @@ go get github.com/dollarkillerx/simple-aws-tools
 ### 上传
 ``` 
 	tools := simple_aws_tools.AwsTools{}
-	tools.Init(simple_aws_tools.WithAccessKey("AKIAVH4VX2QL4I3BY7UV"),simple_aws_tools.WithRegion("eu-central-1"),simple_aws_tools.WithSecretKey("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"))
+	tools.Init(simple_aws_tools.WithAccessKey("xxxxxx"),simple_aws_tools.WithRegion("xxxx"),simple_aws_tools.WithSecretKey("xxxxxxx"))
 
 	upload := tools.InitUpload("pre-europe")
 
