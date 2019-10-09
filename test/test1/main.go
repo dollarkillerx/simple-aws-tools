@@ -1,23 +1,17 @@
-# simple-aws-tools
-simple-aws 简单AWS  工具盒
+/**
+ * @Author: DollarKiller
+ * @Description: fileDir upload test
+ * @Github: https://github.com/dollarkillerx
+ * @Date: Create in 11:42 2019-10-09
+ */
+package main
 
+import (
+	"os"
+	simple_aws_tools "github.com/dollarkillerx/simple-aws-tools"
+)
 
-## Aws S3
-
-### Aws S3术语
-- Region: 存储数据所在的地理区域
-- Endpoint: 存储服务入口,Web服务入口点的URL
-- Bucket: 存储桶S3中用于存储对象的容器
-- Object: 对象是S3中存储的基本实体,由对象数据和原数据组成
-- Key: 键是存储桶中对象的唯一标识符,桶内的每个对象都只能有一个key
-
-### 安装
-``` 
-go get github.com/dollarkillerx/simple-aws-tools
-```
-
-### 上传
-``` 
+func main() {
 	tools := simple_aws_tools.AwsTools{}
 	tools.Init(simple_aws_tools.WithAccessKey("AKIAVH4VX2QL4I3BY7UV"),simple_aws_tools.WithRegion("eu-central-1"),simple_aws_tools.WithSecretKey("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"))
 
@@ -34,4 +28,5 @@ go get github.com/dollarkillerx/simple-aws-tools
 		upload.UploadFile(file,item)
 
 	}
-```
+}
+
